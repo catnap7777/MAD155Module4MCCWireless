@@ -2,9 +2,13 @@
     <string name="app_name">MAD155Module4MCCWireless</string>
 
     <string name="imgDesc1">Company logo image</string>
+    <string name="imgDescIphone">iPhone XR image</string>
+    <string name="imgDescGalaxy">Galaxy 9S image</string>
     <string name="txtTagLine">You do you! Simple &#224; la carte cell service where you choose!</string>
     <string name="txtChoosePlan">Choose your plan and save!</string>
-    <!--<string name="txtBasicPlan">Basic Plan</string>
+
+    <!-- will not need next in final proj-->
+    <string name="txtBasicPlan">Basic Plan</string>
     <string name="txtUnlimitedBasic">&#8226; Unlimited Talk/Text,5GB Data</string>
     <string name="txtHotSpotBasic">&#8226;Hotspot - 500MB LTE</string>
     <string name="txtVidStreamBasic">&#8226;Streaming - DVD quality 480p</string>
@@ -25,14 +29,14 @@
     <string name="txtVidStreamPremium">&#8226;Streaming - Full HD</string>
     <string name="txtCanMexRoamPremium">&#8226;Canada/Mexico Roaming - Unlimited Talk/Text/4G LTE Data</string>
     <string name="txtExtrasPremium">&#8226;Extras Included: Hulu, Tidal, Lookout, Prime</string>
-    -->
+    <!-- end-->
 
     <string name="btnChoosePlan">Next</string>
+    <string name="btnSummary">Next</string>
 
-    <!--<string name="rbBasicPlan">Basic Plan - $20/month</string>
+    <string name="rbBasicPlan">Basic Plan - $20/month</string>
     <string name="rbMidPlan">Middle Plan - $35/month</string>
     <string name="rbPremiumPlan">Premium Plan - $50/month</string>
-    -->
 
     <string name="txtAddOnSaveMore">Add on and save more!</string>
 
@@ -60,6 +64,31 @@
             &#8226;Text/Data in more than 200 worldwide destinations \n
             &#8226;Extras Included: Hulu, Tidal, Lookout, Prime
     </string>
+
+    <string name="cbIPhoneXR">\tBLACK Apple iPhone XR - 64GB \n
+            \tRetail Price = $749.99 \n\tor $31.35 for 18 months
+    </string>
+
+    <string name="cbGalaxy9S">\tROSE Samsung Galaxy 9S - 64GB \n
+            \tRetail Price = $792.99 \n\tor TODAY ONLY SPECIAL -&gt;\n\t$5.00 for 18 months
+    </string>
+
+    <string name="txtThisWeeksDeals">
+        &#8226;  Buy ONE phone and receive a $150 Visa Gift Card\n
+        &#8226;Buy TWO phones and receive a $250 Visa Gift Card
+    </string>
+
+    <string-array name="spnIphone">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="spnGalaxy">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 
 
 </resources>

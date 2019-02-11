@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="193dp"
-        android:layout_height="110dp"
+        android:layout_width="177dp"
+        android:layout_height="99dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -20,9 +20,9 @@
         app:srcCompat="@drawable/logo1" />
 
     <TextView
-        android:id="@+id/txtChoosePlan2"
+        android:id="@+id/txtAddOnSaveMore"
         android:layout_width="328dp"
-        android:layout_height="23dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -36,6 +36,126 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/txtThisWeeksDeal"
+        android:layout_width="333dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="cursive"
+        android:text="@string/txtThisWeeksDeals"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddOnSaveMore" />
+
+    <ImageView
+        android:id="@+id/imageIphone"
+        android:layout_width="79dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="28dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/imgDescIphone"
+        android:cropToPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtThisWeeksDeal"
+        app:srcCompat="@drawable/iphone2_sm" />
+
+    <CheckBox
+        android:id="@+id/cbIphone"
+        android:layout_width="249dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/cbIPhoneXR"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageIphone"
+        app:layout_constraintTop_toBottomOf="@+id/txtThisWeeksDeal" />
+
+    <Spinner
+        android:id="@+id/spnIphone"
+        android:layout_width="98dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:entries="@array/spnIphone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbIphone" />
+
+    <ImageView
+        android:id="@+id/imageGalaxy9S"
+        android:layout_width="70dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/imgDescGalaxy"
+        android:cropToPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageIphone"
+        app:srcCompat="@drawable/galaxy_sm" />
+
+    <CheckBox
+        android:id="@+id/cbGalaxy"
+        android:layout_width="249dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/cbGalaxy9S"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageGalaxy9S"
+        app:layout_constraintTop_toBottomOf="@+id/spnIphone" />
+
+    <Spinner
+        android:id="@+id/spnGalaxy"
+        android:layout_width="98dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:entries="@array/spnGalaxy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbGalaxy" />
+
+    <TextView
+        android:id="@+id/txtPlanSelected"
+        android:layout_width="326dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnGalaxy" />
+
+    <Button
+        android:id="@+id/btnSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/btnSummary"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlanSelected" />
 
 
 </android.support.constraint.ConstraintLayout>
