@@ -5,7 +5,7 @@
     <string name="txtTagLine">You do you! Simple &#224; la carte cell service where you choose!</string>
     <string name="txtChoosePlan">Choose your plan and save!</string>
 
-    <string name="txtBasicPlan">Basic Plan</string>
+    <!--<string name="txtBasicPlan">Basic Plan</string>
     <string name="txtUnlimitedBasic">&#8226; Unlimited Talk/Text,5GB Data</string>
     <string name="txtHotSpotBasic">&#8226;Hotspot - 500MB LTE</string>
     <string name="txtVidStreamBasic">&#8226;Streaming - DVD quality 480p</string>
@@ -26,12 +26,14 @@
     <string name="txtVidStreamPremium">&#8226;Streaming - Full HD</string>
     <string name="txtCanMexRoamPremium">&#8226;Canada/Mexico Roaming - Unlimited Talk/Text/4G LTE Data</string>
     <string name="txtExtrasPremium">&#8226;Extras Included: Hulu, Tidal, Lookout, Prime</string>
+    -->
 
     <string name="btnChoosePlan">Next</string>
 
-    <string name="rbBasicPlan">Basic Plan - $20/month</string>
+    <!--<string name="rbBasicPlan">Basic Plan - $20/month</string>
     <string name="rbMidPlan">Middle Plan - $35/month</string>
     <string name="rbPremiumPlan">Premium Plan - $50/month</string>
+    -->
 
     <string name="txtAddOnSaveMore">Add on and save more!</string>
 
