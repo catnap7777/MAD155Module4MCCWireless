@@ -29,9 +29,11 @@
 
     <string name="btnChoosePlan">Pick Your Plan</string>
 
+    <string name="rbBasicPlan">Basic Plan - $20/month</string>
+    <string name="rbMidPlan">Middle Plan - $35/month</string>
+    <string name="rbPremiumPlan">Premium Plan - $50/month</string>
 
-
-
+    <string name="txtAddOnSaveMore">Add on and save more!</string>
 
 
 </resources>
