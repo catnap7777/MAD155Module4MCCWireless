@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">MAD155Module4MCCWireless</string>
+
+    <string name="imgDesc1">Company logo image</string>
+    <string name="txtTagLine">You do you! Simple &#224; la carte cell service where you choose!</string>
+    <string name="txtChoosePlan">Choose your plan and save!</string>
+
+    <string name="txtBasicPlan">Basic Plan</string>
+    <string name="txtUnlimitedBasic">&#8226; Unlimited Talk/Text,5GB Data</string>
+    <string name="txtHotSpotBasic">&#8226;Hotspot - 500MB LTE</string>
+    <string name="txtVidStreamBasic">&#8226;Streaming - DVD quality 480p</string>
+    <string name="txtCanMexRoamBasic">&#8226;Canada/Mexico Roaming - Unlimited Talk/Text, 5GB 4G LTE Data</string>
+    <string name="txtGlobalRoam">&#8226;Text/Data in more than 200 worldwide destinations</string>
+    <string name="txtExtrasBasic">&#8226;Extras Included: Hulu</string>
+
+    <string name="txtMidPlan">Middle Plan</string>
+    <string name="txtUnlimitedMid">&#8226;Unlimited Talk/Text,10GB Data</string>
+    <string name="txtHotSpotMid">&#8226;Hotspot - 50GB LTE</string>
+    <string name="txtVidStreamMid">&#8226;Streaming - HD quality 1080p</string>
+    <string name="txtCanMexRoamMid">&#8226;Canada/Mexico Roaming - Unlimited Talk/Text, 10GB 4G LTE Data</string>
+    <string name="txtExtrasMid">&#8226;Extras Included: Hulu, Tidal</string>
+
+    <string name="txtPremiumPlan">Premium Plan</string>
+    <string name="txtUnlimitedPremium">&#8226;Unlimited Talk/Text,Data</string>
+    <string name="txtHotSpotPremium">&#8226;Hotspot - 100GB LTE</string>
+    <string name="txtVidStreamPremium">&#8226;Streaming - Full HD</string>
+    <string name="txtCanMexRoamPremium">&#8226;Canada/Mexico Roaming - Unlimited Talk/Text/4G LTE Data</string>
+    <string name="txtExtrasPremium">&#8226;Extras Included: Hulu, Tidal, Lookout, Prime</string>
+
+    <string name="btnChoosePlan">Pick Your Plan</string>
+
+
+
+
+
+
+</resources>
