@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="348dp"
-        android:layout_height="91dp"
+        android:layout_width="338dp"
+        android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:adjustViewBounds="true"
@@ -17,7 +17,6 @@
         android:contentDescription="@string/imgDesc1"
         android:cropToPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo1" />

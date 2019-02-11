@@ -8,19 +8,21 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="177dp"
-        android:layout_height="99dp"
+        android:layout_width="127dp"
+        android:layout_height="80dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
         android:contentDescription="@string/imgDesc1"
+        android:cropToPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo1" />
 
     <TextView
-        android:id="@+id/txtAddOnSaveMore"
+        android:id="@+id/txtOrderSummary"
         android:layout_width="328dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -39,7 +41,7 @@
 
     <TextView
         android:id="@+id/txtThisWeeksDeal"
-        android:layout_width="333dp"
+        android:layout_width="347dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -48,11 +50,11 @@
         android:text="@string/txtThisWeeksDeals"
         android:textAlignment="textStart"
         android:textColor="@android:color/holo_orange_light"
-        android:textSize="16sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddOnSaveMore" />
+        app:layout_constraintTop_toBottomOf="@+id/txtOrderSummary" />
 
     <ImageView
         android:id="@+id/imageIphone"
@@ -134,9 +136,10 @@
     <TextView
         android:id="@+id/txtPlanSelected"
         android:layout_width="326dp"
-        android:layout_height="79dp"
+        android:layout_height="116dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spnGalaxy" />
@@ -146,7 +149,6 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:text="@string/btnSummary"
         android:textColor="@color/colorAccent"

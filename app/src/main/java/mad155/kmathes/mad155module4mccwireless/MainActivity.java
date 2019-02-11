@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String selectedPlan;
+                String selectedPlan = "";
+                String selectedPlanDesc = "";
 
                 final RadioButton rbBasic = (RadioButton) findViewById(R.id.rbBasicPlan);
                 final RadioButton rbMid = (RadioButton) findViewById(R.id.rbMidPlan);
@@ -30,16 +31,20 @@ public class MainActivity extends AppCompatActivity {
 
                 if (rbBasic.isChecked()) {
                     selectedPlan = "Basic";
+                    selectedPlanDesc = getString(R.string.txtBasic);
                 } else if (rbMid.isChecked()) {
                     selectedPlan = "Middle";
+                    selectedPlanDesc = getString(R.string.txtMid);
                 } else if (rbPremium.isChecked()) {
                     selectedPlan = "Premium";
+                    selectedPlanDesc = getString(R.string.txtPremium);
                 } else {
                     selectedPlan = "Wrong";
                 }
 
                 Intent intent1 = new Intent(MainActivity.this, ChooseDeal.class);
                 intent1.putExtra("planSelected", selectedPlan);
+                intent1.putExtra("planSelectedDesc", selectedPlanDesc);
                 startActivity(intent1);
             }
         });

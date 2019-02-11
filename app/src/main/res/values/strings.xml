@@ -39,6 +39,7 @@
     <string name="rbPremiumPlan">Premium Plan - $50/month</string>
 
     <string name="txtAddOnSaveMore">Add on and save more!</string>
+    <string name="txtOrderSummary">Order Summary</string>
 
     <string name="txtBasic">
             &#8226; Unlimited Talk/Text, 5GB Data \n
@@ -65,17 +66,17 @@
             &#8226;Extras Included: Hulu, Tidal, Lookout, Prime
     </string>
 
-    <string name="cbIPhoneXR">\tBLACK Apple iPhone XR - 64GB \n
-            \tRetail Price = $749.99 \n\tor $31.35 for 18 months
+    <string name="cbIPhoneXR">\tBLUE Apple iPhone XR - 64GB \n
+            \tPrice = $749.99 \n\tor $31.35 for 18 months
     </string>
 
     <string name="cbGalaxy9S">\tROSE Samsung Galaxy 9S - 64GB \n
-            \tRetail Price = $792.99 \n\tor TODAY ONLY SPECIAL -&gt;\n\t$5.00 for 18 months
+            \tPrice = $549.99 \n\tor TODAY ONLY SPECIAL -&gt;\n\t$25.00 for 18 months
     </string>
 
     <string name="txtThisWeeksDeals">
-        &#8226;  Buy ONE phone and receive a $150 Visa Gift Card\n
-        &#8226;Buy TWO phones and receive a $250 Visa Gift Card
+        &#8226;  Buy ONE phone &amp; receive a $50 Visa Gift Card\n
+        &#8226;Buy TWO phones or more &amp; receive a $100 Visa Gift Card
     </string>
 
     <string-array name="spnIphone">
@@ -89,6 +90,11 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+
+    <string name="rbPayFull">Pay in full for phones</string>
+    <string name="rbPayMonthly">Pay monthly for phones</string>
+
+    <string name="btnOrderTotals">Click to view Order Totals</string>
 
 
 </resources>
