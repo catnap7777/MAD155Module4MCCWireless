@@ -4,7 +4,6 @@
     <string name="imgDesc1">Company logo image</string>
     <string name="txtTagLine">You do you! Simple &#224; la carte cell service where you choose!</string>
     <string name="txtChoosePlan">Choose your plan and save!</string>
-
     <!--<string name="txtBasicPlan">Basic Plan</string>
     <string name="txtUnlimitedBasic">&#8226; Unlimited Talk/Text,5GB Data</string>
     <string name="txtHotSpotBasic">&#8226;Hotspot - 500MB LTE</string>
