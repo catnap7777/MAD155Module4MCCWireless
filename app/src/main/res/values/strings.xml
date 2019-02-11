@@ -27,13 +27,38 @@
     <string name="txtCanMexRoamPremium">&#8226;Canada/Mexico Roaming - Unlimited Talk/Text/4G LTE Data</string>
     <string name="txtExtrasPremium">&#8226;Extras Included: Hulu, Tidal, Lookout, Prime</string>
 
-    <string name="btnChoosePlan">Pick Your Plan</string>
+    <string name="btnChoosePlan">Next</string>
 
     <string name="rbBasicPlan">Basic Plan - $20/month</string>
     <string name="rbMidPlan">Middle Plan - $35/month</string>
     <string name="rbPremiumPlan">Premium Plan - $50/month</string>
 
     <string name="txtAddOnSaveMore">Add on and save more!</string>
+
+    <string name="txtBasic">
+            &#8226; Unlimited Talk/Text, 5GB Data \n
+            &#8226;Hotspot - 500MB LTE  \n
+            &#8226;Streaming - DVD quality 480p \n
+            &#8226;Canada/Mexico Roaming - Unlimited Talk/Text,\n\t\t\t 5GB 4G LTE Data \n
+            &#8226;Text/Data in more than 200 worldwide destinations \n
+            &#8226;Extras Included: Hulu
+    </string>
+    <string name="txtMid">
+            &#8226; Unlimited Talk/Text, 10GB Data \n
+            &#8226;Hotspot - 50GB LTE  \n
+            &#8226;Streaming - HD quality 1080p \n
+            &#8226;Canada/Mexico Roaming - Unlimited Talk/Text,\n\t\t\t 10GB 4G LTE Data \n
+            &#8226;Text/Data in more than 200 worldwide destinations \n
+            &#8226;Extras Included: Hulu, Tidal
+    </string>
+    <string name="txtPremium">
+            &#8226; Unlimited Talk/Text, Data \n
+            &#8226;Hotspot - 100GB LTE  \n
+            &#8226;Streaming - Full HD \n
+            &#8226;Canada/Mexico Roaming - Unlimited Talk/Text/4G LTE Data \n
+            &#8226;Text/Data in more than 200 worldwide destinations \n
+            &#8226;Extras Included: Hulu, Tidal, Lookout, Prime
+    </string>
 
 
 </resources>

@@ -8,11 +8,14 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="251dp"
-        android:layout_height="101dp"
+        android:layout_width="348dp"
+        android:layout_height="91dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/holo_blue_dark"
         android:contentDescription="@string/imgDesc1"
+        android:cropToPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,312 +48,109 @@
         android:text="@string/txtChoosePlan"
         android:textAlignment="center"
         android:textColor="#ffd50d"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTagLine" />
 
-    <TextView
-        android:id="@+id/txtPlanBasic"
-        android:layout_width="317dp"
-        android:layout_height="119dp"
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="298dp"
+        android:layout_height="369dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/txtBasicPlan"
-        android:textColor="#ff0000"
-        android:textSize="14sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtChoosePlan" />
+        app:layout_constraintTop_toBottomOf="@+id/txtChoosePlan">
 
-    <TextView
-        android:id="@+id/txtUnlimitedBasic"
-        android:layout_width="162dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtUnlimitedBasic"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtPlanBasic" />
+        <RadioButton
+            android:id="@+id/rbBasicPlan"
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/rbBasicPlan"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txtHotSpotBasic"
-        android:layout_width="162dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtHotSpotBasic"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUnlimitedBasic" />
+        <TextView
+            android:id="@+id/txtBasic"
+            android:layout_width="345dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/txtBasic"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="267dp" />
 
-    <TextView
-        android:id="@+id/txtVidStreamBasic"
-        android:layout_width="152dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtVidStreamBasic"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHotSpotBasic" />
+        <RadioButton
+            android:id="@+id/rbMidPlan"
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rbMidPlan"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txtExtrasBasic"
-        android:layout_width="162dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtExtrasBasic"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtVidStreamBasic" />
+        <TextView
+            android:id="@+id/txtMid"
+            android:layout_width="345dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/txtMid"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="488dp" />
 
-    <TextView
-        android:id="@+id/txtCanMexRoamBasic"
-        android:layout_width="150dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtCanMexRoamBasic"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtPlanBasic" />
+        <RadioButton
+            android:id="@+id/rbPremiumPlan"
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rbPremiumPlan"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txtGlobalRoam"
-        android:layout_width="150dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtGlobalRoam"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCanMexRoamBasic" />
+        <TextView
+            android:id="@+id/txtPremium"
+            android:layout_width="345dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/txtPremium"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="607dp" />
 
-    <TextView
-        android:id="@+id/txtPlanMid"
-        android:layout_width="317dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtMidPlan"
-        android:textColor="#ff0000"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlanBasic" />
-
-    <TextView
-        android:id="@+id/txtUnlimitedMid"
-        android:layout_width="162dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtUnlimitedMid"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtPlanMid" />
-
-    <TextView
-        android:id="@+id/txtHotSpotMid"
-        android:layout_width="162dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtHotSpotMid"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUnlimitedMid" />
-
-    <TextView
-        android:id="@+id/txtVidStreamMid"
-        android:layout_width="152dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtVidStreamMid"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHotSpotMid" />
-
-    <TextView
-        android:id="@+id/txtExtrasMid"
-        android:layout_width="162dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtExtrasMid"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtVidStreamMid" />
-
-    <TextView
-        android:id="@+id/txtCanMexRoamMid"
-        android:layout_width="153dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtCanMexRoamMid"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.921"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtPlanMid" />
-
-    <TextView
-        android:id="@+id/txtGlobalMid"
-        android:layout_width="150dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtGlobalRoam"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCanMexRoamMid" />
-
-    <TextView
-        android:id="@+id/txtPlanPremium"
-        android:layout_width="317dp"
-        android:layout_height="114dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtPremiumPlan"
-        android:textColor="#ff0000"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlanMid" />
-
-    <TextView
-        android:id="@+id/txtUnlimitedPremium"
-        android:layout_width="162dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtUnlimitedPremium"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtPlanPremium" />
-
-    <TextView
-        android:id="@+id/txtHotSpotPremium"
-        android:layout_width="162dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtHotSpotPremium"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUnlimitedPremium" />
-
-    <TextView
-        android:id="@+id/txtVidStreamPremium"
-        android:layout_width="152dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtVidStreamPremium"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHotSpotPremium" />
-
-    <TextView
-        android:id="@+id/txtExtrasPremium"
-        android:layout_width="162dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtExtrasPremium"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtVidStreamPremium" />
-
-    <TextView
-        android:id="@+id/txtCanMexRoamPremium"
-        android:layout_width="150dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtCanMexRoamPremium"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtPlanPremium" />
-
-    <TextView
-        android:id="@+id/txtGlobalPremium"
-        android:layout_width="150dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txtGlobalRoam"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCanMexRoamPremium" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/btnChoosePlan"
-        android:layout_width="136dp"
-        android:layout_height="29dp"
+        android:layout_width="157dp"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@android:color/holo_blue_light"
         android:text="@string/btnChoosePlan"
         android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlanPremium" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup1" />
+
 
 </android.support.constraint.ConstraintLayout>
