@@ -39,7 +39,7 @@
     <string name="rbPremiumPlan">Premium Plan - $50/month</string>
 
     <string name="txtAddOnSaveMore">Add on and save more!</string>
-    <string name="txtOrderSummary">Order Summary</string>
+    <string name="txtOrderSummaryTitle">Order Summary</string>
 
     <string name="txtBasic">
             &#8226; Unlimited Talk/Text, 5GB Data \n

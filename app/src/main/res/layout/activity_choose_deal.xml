@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/logo1" />
 
     <TextView
-        android:id="@+id/txtOrderSummary"
+        android:id="@+id/txtOrderSummaryTitle"
         android:layout_width="328dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -54,7 +54,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtOrderSummary" />
+        app:layout_constraintTop_toBottomOf="@+id/txtOrderSummaryTitle" />
 
     <ImageView
         android:id="@+id/imageIphone"

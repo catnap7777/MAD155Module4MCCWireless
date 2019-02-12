@@ -22,14 +22,14 @@
         app:srcCompat="@drawable/logo1" />
 
     <TextView
-        android:id="@+id/txtOrderSummary"
+        android:id="@+id/txtOrderSummaryTitle"
         android:layout_width="328dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@android:color/holo_blue_light"
-        android:text="@string/txtOrderSummary"
+        android:text="@string/txtOrderSummaryTitle"
         android:textAlignment="center"
         android:textColor="#ffd50d"
         android:textSize="18sp"
@@ -45,9 +45,11 @@
         android:layout_height="88dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtOrderSummary" />
+        app:layout_constraintTop_toBottomOf="@+id/txtOrderSummaryTitle" />
 
     <TextView
         android:id="@+id/txtPhoneAndQtySelected"
@@ -55,6 +57,8 @@
         android:layout_height="110dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPlanSelected" />
@@ -88,10 +92,11 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnTotals"
         android:layout_width="214dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/btnOrderTotals"
         android:textColor="@color/colorAccent"
@@ -109,6 +114,6 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTotals" />
 
 </android.support.constraint.ConstraintLayout>

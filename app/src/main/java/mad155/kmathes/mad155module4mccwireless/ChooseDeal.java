@@ -1,5 +1,7 @@
 package mad155.kmathes.mad155module4mccwireless;
 
+import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,13 +20,16 @@ public class ChooseDeal extends AppCompatActivity {
         setContentView(R.layout.activity_choose_deal);
 
 
-        String plan = "";
-        String planDesc = "";
+        final String plan;
+        final String planDesc;
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             plan = extras.getString("planSelected");
             planDesc = extras.getString("planSelectedDesc");
+        } else {
+            plan = "";
+            planDesc = "";
         }
 
         System.out.println("plan that was selected: " + plan);
@@ -51,7 +56,9 @@ public class ChooseDeal extends AppCompatActivity {
                 public void onClick(View v) {
 
                     String qtyIphone = "";
+                    int qtyIphone2 = 0;
                     String qtyGalaxy = "";
+                    int qtyGalaxy2 = 0;
                     String descIphone = "";
                     String descGalaxy = "";
                     boolean passIphone = false;
@@ -59,12 +66,14 @@ public class ChooseDeal extends AppCompatActivity {
 
                     if (cBoxIphone.isChecked() && spnrIphone.getSelectedItemPosition() > 0) {
                         qtyIphone = spnrIphone.getSelectedItem().toString();
+                        qtyIphone2 = Integer.parseInt(spnrIphone.getSelectedItem().toString());
                         descIphone = getString(R.string.cbIPhoneXR);
                         passIphone = true;
                     }
 
                     if (cBoxGalaxy.isChecked() && spnrGalaxy.getSelectedItemPosition() > 0) {
                         qtyGalaxy = spnrGalaxy.getSelectedItem().toString();
+                        qtyGalaxy2 = Integer.parseInt(spnrGalaxy.getSelectedItem().toString());
                         descGalaxy = getString(R.string.cbGalaxy9S);
                         passGalaxy = true;
 
@@ -107,12 +116,25 @@ public class ChooseDeal extends AppCompatActivity {
                     });
 
 
-                    System.out.println("passIphone: " + passIphone + " qtyIphone: " + qtyIphone);
+                    System.out.println("passIphone: " + passIphone + " qtyIphone: " + qtyIphone2);
                     System.out.println("descIphone: " + descIphone);
-                    System.out.println("passGalaxy: " + passGalaxy + " qtyGalaxy: " + qtyGalaxy);
+                    System.out.println("passGalaxy: " + passGalaxy + " qtyGalaxy: " + qtyGalaxy2);
                     System.out.println("descGalaxy: " + descGalaxy);
 
-
+                    // if passIphone true - build for intent
+                    // if passGalaxy true - build for intent
+                    // don't forget to pass plan
+                    ///... or maybe i just sent everything and check on next screen?
+                    Intent intent2 = new Intent(ChooseDeal.this, DisplaySummary.class);
+                    intent2.putExtra("planSelected", plan);
+                    intent2.putExtra("planSelectedDesc", planDesc);
+                    intent2.putExtra("passIphone", passIphone);
+                    intent2.putExtra("descIphone", descIphone);
+                    intent2.putExtra("qtyIphone", qtyIphone2);
+                    intent2.putExtra("passGalaxy", passGalaxy);
+                    intent2.putExtra("descGalaxy", descGalaxy);
+                    intent2.putExtra("qtyGalaxy", qtyGalaxy2);
+                    startActivity(intent2);
 
                 }
             });
