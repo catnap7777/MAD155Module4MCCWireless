@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,23 +54,65 @@ public class ChooseDeal extends AppCompatActivity {
                     String qtyGalaxy = "";
                     String descIphone = "";
                     String descGalaxy = "";
+                    boolean passIphone = false;
+                    boolean passGalaxy = false;
 
                     if (cBoxIphone.isChecked() && spnrIphone.getSelectedItemPosition() > 0) {
                         qtyIphone = spnrIphone.getSelectedItem().toString();
                         descIphone = getString(R.string.cbIPhoneXR);
-                    } else {
-                        Toast.makeText (getApplicationContext(), "Please select a quantity", Toast.LENGTH_SHORT)
-                                .show();
+                        passIphone = true;
                     }
 
                     if (cBoxGalaxy.isChecked() && spnrGalaxy.getSelectedItemPosition() > 0) {
                         qtyGalaxy = spnrGalaxy.getSelectedItem().toString();
                         descGalaxy = getString(R.string.cbGalaxy9S);
+                        passGalaxy = true;
 
-                    } else {
+                    }
+
+                    if ((cBoxIphone.isChecked() && spnrIphone.getSelectedItemPosition() == 0) ||
+                            (cBoxGalaxy.isChecked() && spnrGalaxy.getSelectedItemPosition() == 0)) {
+
                         Toast.makeText (getApplicationContext(), "Please select a quantity", Toast.LENGTH_SHORT)
                                 .show();
                     }
+
+                    if ((!cBoxIphone.isChecked() && spnrIphone.getSelectedItemPosition() > 0) ||
+                            (!cBoxGalaxy.isChecked() && spnrGalaxy.getSelectedItemPosition() > 0)) {
+
+                        Toast.makeText (getApplicationContext(), "Please select phone", Toast.LENGTH_SHORT)
+                                .show();
+                    }
+
+                    // attempt to reset qty if box is unchecked
+
+                    cBoxIphone.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                            if (!cBoxIphone.isChecked()) {
+                                spnrIphone.setSelection(0);
+                            }
+                        }
+                    });
+
+                    cBoxGalaxy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                            if (!cBoxGalaxy.isChecked()) {
+                                spnrGalaxy.setSelection(0);
+                            }
+                        }
+                    });
+
+
+                    System.out.println("passIphone: " + passIphone + " qtyIphone: " + qtyIphone);
+                    System.out.println("descIphone: " + descIphone);
+                    System.out.println("passGalaxy: " + passGalaxy + " qtyGalaxy: " + qtyGalaxy);
+                    System.out.println("descGalaxy: " + descGalaxy);
+
+
 
                 }
             });
