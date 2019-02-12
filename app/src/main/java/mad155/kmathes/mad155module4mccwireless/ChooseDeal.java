@@ -19,27 +19,21 @@ public class ChooseDeal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_deal);
 
-
         final String plan;
-        final String planDesc;
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             plan = extras.getString("planSelected");
-            planDesc = extras.getString("planSelectedDesc");
         } else {
             plan = "";
-            planDesc = "";
         }
 
         System.out.println("plan that was selected: " + plan);
-        System.out.println("plan desc that was selected: " + planDesc);
 
-        // Check to make sure project isn't null for some reason
+        //.. check to make sure project isn't null for some reason
         if(plan != null && !plan.isEmpty()) {
 
             System.out.println("Plan is not empty or null : " + plan);
-            System.out.println("PlanDesc is not empty or null : " + planDesc);
 
             final CheckBox cBoxIphone = (CheckBox) findViewById(R.id.cbIphone);
             final CheckBox cBoxGalaxy = (CheckBox) findViewById(R.id.cbGalaxy);
@@ -49,52 +43,90 @@ public class ChooseDeal extends AppCompatActivity {
 
             Button btnSummary = (Button) findViewById(R.id.btnSummary);
 
-            txtPlanDescSel.setText("Plan Selected: " + plan + "\n" + planDesc);
+            //.. display the plan that was selected from previous screen
+            String planSelectDesc = "";
+
+            if (plan.equalsIgnoreCase("basic")) {
+                planSelectDesc = getString(R.string.txtBasic);
+                //txtPlanDescSel.setText("Plan Selected: " + plan + "\n" + planSelectDesc);
+                txtPlanDescSel.setText("Plan Selected: " + getString(R.string.rbBasicPlan) + "\n" + planSelectDesc);
+            } else if (plan.equalsIgnoreCase("middle")) {
+                planSelectDesc = getString(R.string.txtMid);
+                //txtPlanDescSel.setText("Plan Selected: " + plan + "\n" + planSelectDesc);
+                txtPlanDescSel.setText("Plan Selected: " + getString(R.string.rbMidPlan) + "\n" + planSelectDesc);
+            } else if (plan.equalsIgnoreCase("premium")){
+                planSelectDesc = getString(R.string.txtPremium);
+                //txtPlanDescSel.setText("Plan Selected: " + plan + "\n" + planSelectDesc);
+                txtPlanDescSel.setText("Plan Selected: " + getString(R.string.rbPremiumPlan) + "\n" + planSelectDesc);
+            } else {
+                txtPlanDescSel.setText("No Plan Selected");
+            }
+
+            //.. if the checkbox or boxes become unchecked, set quantity back to zero
+            cBoxIphone.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                    if (!cBoxIphone.isChecked()) {
+                        spnrIphone.setSelection(0);
+                    }
+                }
+            });
+            cBoxGalaxy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                    if (!cBoxGalaxy.isChecked()) {
+                        spnrGalaxy.setSelection(0);
+                    }
+                }
+            });
 
             btnSummary.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    String qtyIphone = "";
-                    int qtyIphone2 = 0;
-                    String qtyGalaxy = "";
-                    int qtyGalaxy2 = 0;
-                    String descIphone = "";
-                    String descGalaxy = "";
+                    int qtyIphone = 0;
+                    int qtyGalaxy = 0;
                     boolean passIphone = false;
                     boolean passGalaxy = false;
+                    boolean passDataOk = true;
 
+                    //.. if a phone is selected for purchase, get the quantity desired
                     if (cBoxIphone.isChecked() && spnrIphone.getSelectedItemPosition() > 0) {
-                        qtyIphone = spnrIphone.getSelectedItem().toString();
-                        qtyIphone2 = Integer.parseInt(spnrIphone.getSelectedItem().toString());
-                        descIphone = getString(R.string.cbIPhoneXR);
+                        qtyIphone = Integer.parseInt(spnrIphone.getSelectedItem().toString());
                         passIphone = true;
+                        passDataOk = true;
                     }
 
                     if (cBoxGalaxy.isChecked() && spnrGalaxy.getSelectedItemPosition() > 0) {
-                        qtyGalaxy = spnrGalaxy.getSelectedItem().toString();
-                        qtyGalaxy2 = Integer.parseInt(spnrGalaxy.getSelectedItem().toString());
-                        descGalaxy = getString(R.string.cbGalaxy9S);
+                        qtyGalaxy = Integer.parseInt(spnrGalaxy.getSelectedItem().toString());
                         passGalaxy = true;
-
+                        passDataOk = true;
+                    }
+                    //.. if no phone is selected, it's still ok but flag to kick off intent must be set
+                    if ((!cBoxIphone.isChecked() && spnrIphone.getSelectedItemPosition() == 0) &&
+                            ((!cBoxGalaxy.isChecked() && spnrGalaxy.getSelectedItemPosition() == 0))) {
+                        passDataOk = true;
                     }
 
+                    //.. if phone is selected but quantity is zero, set Toast
                     if ((cBoxIphone.isChecked() && spnrIphone.getSelectedItemPosition() == 0) ||
                             (cBoxGalaxy.isChecked() && spnrGalaxy.getSelectedItemPosition() == 0)) {
-
-                        Toast.makeText (getApplicationContext(), "Please select a quantity", Toast.LENGTH_SHORT)
+                        passDataOk = false;
+                        Toast.makeText(getApplicationContext(), "Please select a quantity", Toast.LENGTH_SHORT)
                                 .show();
                     }
-
+                    //.. if quantity is set but phone is not checked, set Toast
                     if ((!cBoxIphone.isChecked() && spnrIphone.getSelectedItemPosition() > 0) ||
                             (!cBoxGalaxy.isChecked() && spnrGalaxy.getSelectedItemPosition() > 0)) {
-
-                        Toast.makeText (getApplicationContext(), "Please select phone", Toast.LENGTH_SHORT)
+                        passDataOk = false;
+                        Toast.makeText(getApplicationContext(), "Please select phone", Toast.LENGTH_SHORT)
                                 .show();
                     }
 
-                    // attempt to reset qty if box is unchecked
-
+                    /*
+                    //.. if the checkbox or boxes become unchecked, set quantity back to zero
                     cBoxIphone.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                         @Override
                         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -104,7 +136,6 @@ public class ChooseDeal extends AppCompatActivity {
                             }
                         }
                     });
-
                     cBoxGalaxy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                         @Override
                         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -114,34 +145,23 @@ public class ChooseDeal extends AppCompatActivity {
                             }
                         }
                     });
+                    */
 
+                    System.out.println("PLAN SELECTED " + plan);
+                    System.out.println("passIphone: " + passIphone + " qtyIphone: " + qtyIphone);
+                    System.out.println("passGalaxy: " + passGalaxy + " qtyGalaxy: " + qtyGalaxy);
 
-                    System.out.println("passIphone: " + passIphone + " qtyIphone: " + qtyIphone2);
-                    System.out.println("descIphone: " + descIphone);
-                    System.out.println("passGalaxy: " + passGalaxy + " qtyGalaxy: " + qtyGalaxy2);
-                    System.out.println("descGalaxy: " + descGalaxy);
-
-                    // if passIphone true - build for intent
-                    // if passGalaxy true - build for intent
-                    // don't forget to pass plan
-                    ///... or maybe i just sent everything and check on next screen?
-                    Intent intent2 = new Intent(ChooseDeal.this, DisplaySummary.class);
-                    intent2.putExtra("planSelected", plan);
-                    intent2.putExtra("planSelectedDesc", planDesc);
-                    intent2.putExtra("passIphone", passIphone);
-                    intent2.putExtra("descIphone", descIphone);
-                    intent2.putExtra("qtyIphone", qtyIphone2);
-                    intent2.putExtra("passGalaxy", passGalaxy);
-                    intent2.putExtra("descGalaxy", descGalaxy);
-                    intent2.putExtra("qtyGalaxy", qtyGalaxy2);
-                    startActivity(intent2);
-
+                    if (passDataOk) {
+                        Intent intent2 = new Intent(ChooseDeal.this, DisplaySummary.class);
+                        intent2.putExtra("planSelected", plan);
+                        intent2.putExtra("passIphone", passIphone);
+                        intent2.putExtra("qtyIphone", qtyIphone);
+                        intent2.putExtra("passGalaxy", passGalaxy);
+                        intent2.putExtra("qtyGalaxy", qtyGalaxy);
+                        startActivity(intent2);
+                    }
                 }
             });
-
-            //tv.setText(getString(R.string.Converasation) + "HELLo");
-            //if (cBoxIphone.isChecked() )
-
         }
     }
 }

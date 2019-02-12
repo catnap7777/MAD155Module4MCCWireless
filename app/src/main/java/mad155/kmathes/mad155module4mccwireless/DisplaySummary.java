@@ -13,16 +13,11 @@ public class DisplaySummary extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_summary);
 
-        final String SummaryPlan;
-        final String SummaryPlanDesc;
-        final boolean SummaryPassIphone;
-        final String SummaryDescIphone;
-        //final String SummaryQtyIphone;
-        final int SummaryQtyIphone;
-        final boolean SummaryPassGalaxy;
-        final String SummaryDescGalaxy;
-        //final String SummaryQtyGalaxy;
-        final int SummaryQtyGalaxy;
+        final String summaryPlan;
+        final boolean summaryPassIphone;
+        final int summaryQtyIphone;
+        final boolean summaryPassGalaxy;
+        final int summaryQtyGalaxy;
 
         TextView phonesSelected = (TextView) findViewById(R.id.txtPhoneAndQtySelected);
         TextView planSelected = (TextView) findViewById(R.id.txtPlanSelected);
@@ -33,43 +28,52 @@ public class DisplaySummary extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if(extras != null) {
-            SummaryPlan = extras.getString("planSelected");
-            SummaryPlanDesc = extras.getString("planSelectedDesc");
-            SummaryPassIphone = extras.getBoolean("passIphone");
-            SummaryDescIphone = extras.getString("descIphone");
-            //SummaryQtyIphone = extras.getString("qtyIphone");
-            SummaryQtyIphone = extras.getInt("qtyIphone");
-            SummaryPassGalaxy = extras.getBoolean("passGalaxy");
-            SummaryDescGalaxy = extras.getString("descGalaxy");
-            //SummaryQtyGalaxy = extras.getString("qtyGalaxy");
-            SummaryQtyGalaxy = extras.getInt("qtyGalaxy");
+            summaryPlan = extras.getString("planSelected");
+            summaryPassIphone = extras.getBoolean("passIphone");
+            summaryQtyIphone = extras.getInt("qtyIphone");
+            summaryPassGalaxy = extras.getBoolean("passGalaxy");
+            summaryQtyGalaxy = extras.getInt("qtyGalaxy");
         } else {
-            SummaryPlan = "";
-            SummaryPlanDesc = "";
-            SummaryPassIphone = false;
-            SummaryDescIphone = "";
-            SummaryQtyIphone = 0;
-            SummaryPassGalaxy = false;
-            SummaryDescGalaxy = "";
-            SummaryQtyGalaxy = 0;
+            summaryPlan = "";
+            summaryPassIphone = false;
+            summaryQtyIphone = 0;
+            summaryPassGalaxy = false;
+            summaryQtyGalaxy = 0;
         }
 
-        System.out.println("SummaryPassIphone: " + SummaryPassIphone + " SummaryQtyIphone: " + SummaryQtyIphone);
-        System.out.println("SummaryDescIphone: " + SummaryDescIphone);
-        System.out.println("SummaryPassGalaxy: " + SummaryPassGalaxy + " SummaryQtyGalaxy: " + SummaryQtyGalaxy);
-        System.out.println("SummaryDescGalaxy: " + SummaryDescGalaxy);
+        System.out.println("PLAN SELECTED AND PASSED: " + summaryPlan);
+        System.out.println("summaryPassIphone: " + summaryPassIphone + " summaryQtyIphone: " + summaryQtyIphone);
+        System.out.println("summaryPassGalaxy: " + summaryPassGalaxy + " summaryQtyGalaxy: " + summaryQtyGalaxy);
 
-        planSelected.setText("Plan Selected: " + SummaryPlan + "\n\t" + SummaryPlanDesc);
+        //.. display the plan that was selected; passed in from previous screen
 
-        if ((SummaryPassIphone) && (SummaryPassGalaxy)) {
-            phonesSelected.setText("Quantity: " + SummaryQtyIphone + " - \n\t\t" + SummaryDescIphone + "\n" +
-                    "Quantity: " + SummaryQtyGalaxy + " - \n\t\t" + SummaryDescGalaxy);
-        } else if ((SummaryPassIphone) && (!SummaryPassGalaxy)) {
-            phonesSelected.setText("Quantity: " + SummaryQtyIphone + " - \n\t\t" + SummaryDescIphone);
-        } else if ((!SummaryPassIphone) && (SummaryPassGalaxy)) {
-            phonesSelected.setText("Quantity: " + SummaryQtyGalaxy + " - \n\t\t" + SummaryDescGalaxy);
+        String displayPlanSelected = "";
+        if (summaryPlan.equalsIgnoreCase("basic")) {
+            displayPlanSelected = getString(R.string.rbBasicPlan);
+        } else if (summaryPlan.equalsIgnoreCase("middle")) {
+            displayPlanSelected = getString(R.string.rbMidPlan);
+        } else if (summaryPlan.equalsIgnoreCase("premium")) {
+            displayPlanSelected = getString(R.string.rbPremiumPlan);
+        } else {
+            displayPlanSelected = "Error";
+        }
+
+        planSelected.setText("Plan Selected: " + displayPlanSelected);
+
+        //.. display phone info if phones were selected for purchase
+        if ((summaryPassIphone) && (summaryPassGalaxy)) {
+            phonesSelected.setText("Quantity: " + summaryQtyIphone + " - \n" + getString(R.string.cbIPhoneXR) + "\n\n" +
+                    "Quantity: " + summaryQtyGalaxy + " - \n" + getString(R.string.cbGalaxy9S));
+        } else if ((summaryPassIphone) && (!summaryPassGalaxy)) {
+            phonesSelected.setText("Quantity: " + summaryQtyIphone + " - \n" + getString(R.string.cbIPhoneXR));
+        } else if ((!summaryPassIphone) && (summaryPassGalaxy)) {
+            phonesSelected.setText("Quantity: " + summaryQtyGalaxy + " - \n" + getString(R.string.cbGalaxy9S));
         } else {
             phonesSelected.setText("No phones were selected/ordered");
         }
+
+
+
+
     }
 }
