@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtPlanSelected" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radioGroup2"
         android:layout_width="303dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -109,7 +109,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
     <TextView
         android:id="@+id/txtOrderTotals"

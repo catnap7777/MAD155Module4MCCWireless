@@ -4,7 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,7 @@ public class DisplaySummary extends AppCompatActivity {
         TextView planSelected = (TextView) findViewById(R.id.txtPlanSelected);
         final RadioButton radioPayFull = (RadioButton) findViewById(R.id.rbPayFull);
         final RadioButton radioPayMonthly = (RadioButton) findViewById(R.id.rbPayMonthly);
+        final RadioGroup radioGrp1 = (RadioGroup) findViewById(R.id.radioGroup2);
         Button btnGetTotals = (Button) findViewById(R.id.btnTotals);
         final TextView txtOrderTotals = (TextView) findViewById(R.id.txtOrderTotals);
 
@@ -82,6 +85,29 @@ public class DisplaySummary extends AppCompatActivity {
         } else {
             phonesSelected.setText("No phones were selected/ordered");
         }
+
+        //.. if no phones are being purchased, set phone payment type radio buttons as unclickable
+        if ((!summaryPassIphone) && (!summaryPassGalaxy)) {
+            for (int i = 0; i < radioGrp1.getChildCount(); i++) {
+                radioGrp1.getChildAt(i).setEnabled(false);
+            }
+        }
+
+        //.. if phones are being purchased and radio button payment option changes, zero out summary
+        //    and make user hit orders total button again to get refreshed data
+        radioPayFull.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                txtOrderTotals.setText(" ");
+            }
+        });
+
+        radioPayMonthly.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                txtOrderTotals.setText(" ");
+            }
+        });
 
         btnGetTotals.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,7 +178,7 @@ public class DisplaySummary extends AppCompatActivity {
                         }
                     }
 
-                    DecimalFormat amtFormatted = new DecimalFormat("$######.##");
+                    DecimalFormat amtFormatted = new DecimalFormat("$########.00");
 
                     txtOrderTotals.setText("Estimated order totals with first months payment included: " +
                             "\nPlan Amount: " + amtFormatted.format(totalAmtPlan) +
