@@ -28,12 +28,12 @@ public class ChooseDeal extends AppCompatActivity {
             plan = "";
         }
 
-        System.out.println("plan that was selected: " + plan);
+        // for debugging.. System.out.println("plan that was selected: " + plan);
 
         //.. check to make sure project isn't null for some reason
         if(plan != null && !plan.isEmpty()) {
 
-            System.out.println("Plan is not empty or null : " + plan);
+            // for debugging.. System.out.println("Plan is not empty or null : " + plan);
 
             final CheckBox cBoxIphone = (CheckBox) findViewById(R.id.cbIphone);
             final CheckBox cBoxGalaxy = (CheckBox) findViewById(R.id.cbGalaxy);
@@ -125,31 +125,9 @@ public class ChooseDeal extends AppCompatActivity {
                                 .show();
                     }
 
-                    /*
-                    //.. if the checkbox or boxes become unchecked, set quantity back to zero
-                    cBoxIphone.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                            if (!cBoxIphone.isChecked()) {
-                                spnrIphone.setSelection(0);
-                            }
-                        }
-                    });
-                    cBoxGalaxy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                            if (!cBoxGalaxy.isChecked()) {
-                                spnrGalaxy.setSelection(0);
-                            }
-                        }
-                    });
-                    */
-
-                    System.out.println("PLAN SELECTED " + plan);
-                    System.out.println("passIphone: " + passIphone + " qtyIphone: " + qtyIphone);
-                    System.out.println("passGalaxy: " + passGalaxy + " qtyGalaxy: " + qtyGalaxy);
+                    // for debugging.. System.out.println("PLAN SELECTED " + plan);
+                    // for debugging.. System.out.println("passIphone: " + passIphone + " qtyIphone: " + qtyIphone);
+                    // for debugging.. System.out.println("passGalaxy: " + passGalaxy + " qtyGalaxy: " + qtyGalaxy);
 
                     if (passDataOk) {
                         Intent intent2 = new Intent(ChooseDeal.this, DisplaySummary.class);

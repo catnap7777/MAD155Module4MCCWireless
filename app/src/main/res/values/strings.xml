@@ -11,10 +11,14 @@
 
     <string name="btnChoosePlan">Next</string>
     <string name="btnSummary">Next</string>
+    <string name="btnOrderTotals">Order Totals</string>
 
     <string name="rbBasicPlan">Basic Plan - $20/month</string>
     <string name="rbMidPlan">Middle Plan - $35/month</string>
     <string name="rbPremiumPlan">Premium Plan - $50/month</string>
+    <string name="amtBasicPlan">20</string>
+    <string name="amtMidPlan">35</string>
+    <string name="amtPremiumPlan">50</string>
 
     <string name="txtBasic">
             &#8226; Unlimited Talk/Text, 5GB Data \n
@@ -49,10 +53,17 @@
             \tPrice = $549.99 \n\tor TODAY ONLY SPECIAL -&gt;\n\t$25.00 for 18 months
     </string>
 
+    <string name="iPhonePrcFull">749.99</string>
+    <string name="iPhonePrcMonthly">31.35</string>
+    <string name="galaxyPrcFull">549.99</string>
+    <string name="galaxyPrcMonthly">25</string>
+
     <string name="txtThisWeeksDeals">
         &#8226;  Buy ONE phone &amp; receive a $50 Visa Gift Card\n
         &#8226;Buy TWO phones or more &amp; receive a $100 Visa Gift Card
     </string>
+    <string name= "deal50GC">$50 Visa Gift Card!</string>
+    <string name= "deal100GC">$100 Visa Gift Card!</string>
 
     <string-array name="spnIphone">
         <item>0</item>
@@ -69,7 +80,6 @@
     <string name="rbPayFull">Pay in full for phones</string>
     <string name="rbPayMonthly">Pay monthly for phones</string>
 
-    <string name="btnOrderTotals">Click to view Order Totals</string>
 
 
 </resources>
