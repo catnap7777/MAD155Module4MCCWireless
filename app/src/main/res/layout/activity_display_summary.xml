@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".DisplaySummary">
 
+
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="124dp"

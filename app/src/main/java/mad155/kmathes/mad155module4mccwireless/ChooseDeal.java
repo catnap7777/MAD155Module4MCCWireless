@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class ChooseDeal extends AppCompatActivity {
 
     @Override

@@ -44,7 +44,7 @@ public class DisplaySummary extends AppCompatActivity {
             summaryPassGalaxy = extras.getBoolean("passGalaxy");
             summaryQtyGalaxy = extras.getInt("qtyGalaxy");
         } else {
-            summaryPlan = "";
+            summaryPlan = " ";
             summaryPassIphone = false;
             summaryQtyIphone = 0;
             summaryPassGalaxy = false;
@@ -116,6 +116,10 @@ public class DisplaySummary extends AppCompatActivity {
                 double totalAmtOrder = 0;
                 int totalPhonesPurch = 0;
                 String giftCardEarned = "";
+                double percentOffTotalEarned = 0;
+                //.. multiplier for 10% off
+                double percentOffAmt = .10;
+                String txtPercentOffEarned = "No";
                 String phonePaymentType = "";
 
                 // for debugging.. System.out.println("summaryPassIphone:" + summaryPassIphone);
@@ -173,7 +177,19 @@ public class DisplaySummary extends AppCompatActivity {
                         totalPhonesPurch = summaryQtyIphone + summaryQtyGalaxy;
                         if (totalPhonesPurch == 1) {
                             giftCardEarned = getString(R.string.deal50GC);
-                        } else if (totalPhonesPurch >= 2) {
+                            txtPercentOffEarned = "No";
+                        } else if (totalPhonesPurch == 2) {
+                            giftCardEarned = getString(R.string.deal100GC);
+                            txtPercentOffEarned = "No";
+                        //.. if 3 or more phones purchased and they will be paid in full
+                        } else if ((totalPhonesPurch >= 3) && (radioPayFull.isChecked())) {
+                            giftCardEarned = getString(R.string.deal100GC);
+                            txtPercentOffEarned = "Yes";
+                            //.. multiplier to get total with 10% off
+                            percentOffTotalEarned = totalAmtOrder * percentOffAmt;
+                            totalAmtOrder = totalAmtOrder - percentOffTotalEarned;
+                        //.. if 3 or more phones purchased but they will be paid monthly
+                        } else if (totalPhonesPurch >= 3) {
                             giftCardEarned = getString(R.string.deal100GC);
                         }
                     }
@@ -186,13 +202,12 @@ public class DisplaySummary extends AppCompatActivity {
                             "\n\t\t\t\tiPhones Purchased: " + summaryQtyIphone +
                             "\n\t\t\t\tGalaxys Purchased: " + summaryQtyGalaxy +
                             "\nPayment type for phones: " + phonePaymentType +
+                            "\n10% off order earned: " + txtPercentOffEarned +
                             "\nEstimated 1st Months Payment: " + amtFormatted.format(totalAmtOrder) +
                             "\nGift Card Earned: " + giftCardEarned);
                 }
             }
         });
-
-
 
     }
 }

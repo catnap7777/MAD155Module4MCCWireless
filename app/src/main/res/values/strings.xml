@@ -21,28 +21,28 @@
     <string name="amtPremiumPlan">50</string>
 
     <string name="txtBasic">
-            &#8226; Unlimited Talk/Text, 5GB Data \n
-            &#8226;Hotspot - 500MB LTE  \n
-            &#8226;Streaming - DVD quality 480p \n
-            &#8226;Canada/Mexico Roaming - Unlimited Talk/Text,\n\t\t\t 5GB 4G LTE Data \n
-            &#8226;Text/Data in more than 200 worldwide destinations \n
-            &#8226;Extras Included: Hulu
+            \t&#8226; Unlimited Talk/Text, 5GB Data \n
+            \t&#8226;Hotspot - 500MB LTE  \n
+            \t&#8226;Streaming - DVD quality 480p \n
+            \t&#8226;Canada/Mexico Roaming - Unlimited Talk/Text,\n\t\t\t 5GB 4G LTE Data \n
+            \t&#8226;Text/Data in more than 200 worldwide destinations \n
+            \t&#8226;Extras Included: Hulu
     </string>
     <string name="txtMid">
-            &#8226; Unlimited Talk/Text, 10GB Data \n
-            &#8226;Hotspot - 50GB LTE  \n
-            &#8226;Streaming - HD quality 1080p \n
-            &#8226;Canada/Mexico Roaming - Unlimited Talk/Text,\n\t\t\t 10GB 4G LTE Data \n
-            &#8226;Text/Data in more than 200 worldwide destinations \n
-            &#8226;Extras Included: Hulu, Tidal
+            \t&#8226; Unlimited Talk/Text, 10GB Data \n
+            \t&#8226;Hotspot - 50GB LTE  \n
+            \t&#8226;Streaming - HD quality 1080p \n
+            \t&#8226;Canada/Mexico Roaming - Unlimited Talk/Text,\n\t\t\t 10GB 4G LTE Data \n
+            \t&#8226;Text/Data in more than 200 worldwide destinations \n
+            \t&#8226;Extras Included: Hulu, Tidal
     </string>
     <string name="txtPremium">
-            &#8226; Unlimited Talk/Text, Data \n
-            &#8226;Hotspot - 100GB LTE  \n
-            &#8226;Streaming - Full HD \n
-            &#8226;Canada/Mexico Roaming - Unlimited Talk/Text/4G LTE Data \n
-            &#8226;Text/Data in more than 200 worldwide destinations \n
-            &#8226;Extras Included: Hulu, Tidal, Lookout, Prime
+            \t&#8226; Unlimited Talk/Text, Data \n
+            \t&#8226;Hotspot - 100GB LTE  \n
+            \t&#8226;Streaming - Full HD \n
+            \t&#8226;Canada/Mexico Roaming - Unlimited Talk/Text/4G LTE Data \n
+            \t&#8226;Text/Data in more than 200 worldwide destinations \n
+            \t&#8226;Extras Included: Hulu, Tidal, Lookout, Prime
     </string>
 
     <string name="cbIPhoneXR">\tBLUE Apple iPhone XR - 64GB \n
@@ -59,9 +59,12 @@
     <string name="galaxyPrcMonthly">25</string>
 
     <string name="txtThisWeeksDeals">
-        &#8226;  Buy ONE phone &amp; receive a $50 Visa Gift Card\n
-        &#8226;Buy TWO phones or more &amp; receive a $100 Visa Gift Card
+        \t&#8226;Buy 1 phone &amp; receive a $50 Visa Gift Card\n
+        \t&#8226;Buy 2 phones or more &amp; receive a $100 Visa Gift Card\n
+        \t&#8226;Buy 3 phones or more &amp; receive a $100 Visa Gift Card
+                \n\t\t\t&amp; 10% off, if phones paid in full at time of order
     </string>
+
     <string name= "deal50GC">$50 Visa Gift Card!</string>
     <string name= "deal100GC">$100 Visa Gift Card!</string>
 
@@ -79,7 +82,5 @@
 
     <string name="rbPayFull">Pay in full for phones</string>
     <string name="rbPayMonthly">Pay monthly for phones</string>
-
-
 
 </resources>
